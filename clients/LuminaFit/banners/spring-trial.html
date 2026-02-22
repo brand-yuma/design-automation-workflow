@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=390, initial-scale=1.0" />
+  <title>LuminaFit – 春の無料体験レッスン</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  <style>
+    /* ── Reset & Root ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-base:    #F8F6F3;
+      --color-main:    #7D6E8A;
+      --color-accent:  #C4956A;
+      --color-text:    #2F2B2E;
+      --color-sub:     #7A7480;
+      --color-white:   #FFFFFF;
+      --font-serif:    'Cormorant Garamond', serif;
+      --font-sans:     'Noto Sans JP', sans-serif;
+      --radius-card:   12px;
+      --radius-pill:   9999px;
+      --radius-badge:  4px;
+    }
+
+    body {
+      background: #E8E6E3;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 24px 0;
+      font-family: var(--font-sans);
+    }
+
+    /* ── BannerRoot ───────────────────────────────── */
+    .BannerRoot {
+      width: 390px;
+      background-color: var(--color-base);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* ── HeaderBar ────────────────────────────────── */
+    .HeaderBar {
+      background-color: var(--color-main);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+    }
+
+    .HeaderBar__logo {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--color-white);
+      letter-spacing: 0.08em;
+    }
+
+    .HeaderBar__season {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── HeroImagePlaceholder ─────────────────────── */
+    .HeroImagePlaceholder {
+      background-color: #D9D0C8;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .HeroImagePlaceholder__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: rgba(125, 110, 138, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .HeroImagePlaceholder__icon svg {
+      opacity: 0.6;
+    }
+
+    .HeroImagePlaceholder__label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: var(--color-sub);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── ContentArea ──────────────────────────────── */
+    .ContentArea {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 32px 24px 40px;
+    }
+
+    /* ── SpringBadge ──────────────────────────────── */
+    .SpringBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+      background-color: var(--color-accent);
+      color: var(--color-white);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+    }
+
+    /* ── HeadlineBlock ────────────────────────────── */
+    .HeadlineBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .HeadlineBlock__eyebrow {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-main);
+      letter-spacing: 0.1em;
+    }
+
+    .HeadlineBlock__main {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
+    .HeadlineBlock__main span {
+      color: var(--color-main);
+    }
+
+    .HeadlineBlock__sub {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--color-sub);
+      line-height: 1.7;
+      margin-top: 4px;
+    }
+
+    /* ── Divider ──────────────────────────────────── */
+    .Divider {
+      height: 1px;
+      background-color: rgba(125, 110, 138, 0.15);
+    }
+
+    /* ── BenefitList ──────────────────────────────── */
+    .BenefitList {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .BenefitList__item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .BenefitList__dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgba(196, 149, 106, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .BenefitList__dot svg {
+      color: var(--color-accent);
+    }
+
+    .BenefitList__text {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    /* ── CTASection ───────────────────────────────── */
+    .CTASection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .CTASection__limit {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .CTASection__limit-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+    }
+
+    .CTASection__limit-text {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-accent);
+      letter-spacing: 0.04em;
+    }
+
+    .CTAButton {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--color-accent);
+      color: var(--color-white);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 18px 24px;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .CTAButton__arrow {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .CTASection__note {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: var(--color-sub);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FooterStrip ──────────────────────────────── */
+    .FooterStrip {
+      background-color: var(--color-main);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+    }
+
+    .FooterStrip__text {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BannerRoot -->
+  <div class="BannerRoot">
+
+    <!-- HeaderBar -->
+    <div class="HeaderBar">
+      <span class="HeaderBar__logo">LuminaFit</span>
+      <span class="HeaderBar__season">Spring 2026</span>
+    </div>
+
+    <!-- HeroImagePlaceholder -->
+    <div class="HeroImagePlaceholder">
+      <div class="HeroImagePlaceholder__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="#7D6E8A" stroke-width="1.5"/>
+          <circle cx="8.5" cy="8.5" r="1.5" stroke="#7D6E8A" stroke-width="1.5"/>
+          <path d="M21 15L16 10L5 21" stroke="#7D6E8A" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="HeroImagePlaceholder__label">自然光の撮影写真を配置（温かみのある雰囲気）</span>
+    </div>
+
+    <!-- ContentArea -->
+    <div class="ContentArea">
+
+      <!-- SpringBadge -->
+      <div class="SpringBadge">
+        ✦ Spring Special
+      </div>
+
+      <!-- HeadlineBlock -->
+      <div class="HeadlineBlock">
+        <span class="HeadlineBlock__eyebrow">無料体験レッスン受付中</span>
+        <h1 class="HeadlineBlock__main">
+          春の<span>はじまり</span>に、<br />
+          自分の身体と<br />
+          向き合う時間を。
+        </h1>
+        <p class="HeadlineBlock__sub">
+          姿勢の乱れや慢性的な疲れ、感じていませんか？<br />
+          プロ講師が1対1で、あなたのペースに寄り添います。
+        </p>
+      </div>
+
+      <!-- Divider -->
+      <div class="Divider"></div>
+
+      <!-- BenefitList -->
+      <div class="BenefitList">
+        <div class="BenefitList__item">
+          <div class="BenefitList__dot">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M2 5L4.2 7.5L8 3" stroke="#C4956A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="BenefitList__text">マンツーマン完全個別指導 — あなただけのプログラム</span>
+        </div>
+        <div class="BenefitList__item">
+          <div class="BenefitList__dot">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M2 5L4.2 7.5L8 3" stroke="#C4956A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="BenefitList__text">日程は完全カスタマイズ — 忙しいあなたのスケジュールに合わせて</span>
+        </div>
+        <div class="BenefitList__item">
+          <div class="BenefitList__dot">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M2 5L4.2 7.5L8 3" stroke="#C4956A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="BenefitList__text">手ぶらでOK — ウェア・マット全て完備</span>
+        </div>
+      </div>
+
+      <!-- CTASection -->
+      <div class="CTASection">
+        <div class="CTASection__limit">
+          <div class="CTASection__limit-dot"></div>
+          <span class="CTASection__limit-text">先着10名様限定</span>
+        </div>
+        <a href="#" class="CTAButton">
+          無料体験を予約する
+          <span class="CTAButton__arrow">→</span>
+        </a>
+        <span class="CTASection__note">定員になり次第、受付終了となります</span>
+      </div>
+
+    </div><!-- /ContentArea -->
+
+    <!-- FooterStrip -->
+    <div class="FooterStrip">
+      <span class="FooterStrip__text">LuminaFit — Personal Pilates Studio</span>
+    </div>
+
+  </div><!-- /BannerRoot -->
+
+</body>
+</html>
